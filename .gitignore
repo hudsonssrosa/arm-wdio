@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+.pkl
+
+#Node
+node_modules/
+
+#idea
+*.idea
+.idea
+/shelf/
+/workspace.xml
+
+#vscode
+.DS_Store
+.vscode/
+
+# Environments and Settings
+.local
+env_settings.properties
+
+# Reports and Logs
+allure-report/
+allure-results/
+allure-results-*/
+*.log
+log*.html
+output*.xml
+report*.html
