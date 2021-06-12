@@ -10,6 +10,21 @@ Run the shell script `./install_wdio_from_ground_up.sh`:
     sh install_wdio_from_ground_up.sh
 ```
 
+Once you have installed the Node modules, a test example will be created automatically, and you can remove all of these files at `./test/pageobjects` and `./test/specs`, if you want:
+
+```
+    test
+    └─── pageobjects
+    │   |  login.page.js
+    │   |  page.js
+    │   |  secure.page.js
+    │
+    └─── specs
+        |   example.e2e.js
+
+```
+Those files are already bein ignored by `.gitignore`.
+
 # Installing Dependencies
 
 For the Allure Report or any other additional dependency, just run the `install_dependencies.sh`:
@@ -17,6 +32,9 @@ For the Allure Report or any other additional dependency, just run the `install_
 ```bash
     sh install_dependencies.sh
 ```
+
+
+Attention: Just remove those files mentioned before. Any other file would cause failure in the Automation Practice tests if you remove them though.
 
 # Running the Tests
 

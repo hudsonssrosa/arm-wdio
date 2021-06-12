@@ -3,6 +3,7 @@
 
 # Install WebdriverIO CLI - Dev dependencies
 npm init -y
+npm install -g npm
 npm install @wdio/cli
 npm i --save-dev @wdio/cli
     # If permission is denied. Try:

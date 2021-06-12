@@ -3,7 +3,14 @@
 
 #Node
 node_modules/
+package-lock.json
 package.json
+
+#Example Tests GEnerated Automatically
+/test/pageobjects/login.page.js
+/test/pageobjects/page.js
+/test/pageobjects/secure.page.js
+/test/specs/example.e2e.js
 
 #idea
 *.idea

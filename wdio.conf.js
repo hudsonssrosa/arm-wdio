@@ -1,6 +1,3 @@
-const { addFeature } = require('@wdio/allure-reporter').default;
-const execSync = require('child_process').execSync;
-var allure = require('allure-commandline');
 exports.config = {
     //
     // ====================
@@ -138,12 +135,8 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    // reporters: ['spec'],
-    reporters: [['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: false,
-        disableWebdriverScreenshotsReporting: false,
-    }]],
+    reporters: ['spec'],
+
 
     
     //
@@ -166,38 +159,8 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    onPrepare: function (config, capabilities) {
-        execSync('rm -rf ./allure-results/** && rm -rf ./allure-report/**', { encoding: 'utf-8' });
-        var czlogo = ' \n\
-            .        ████████████████████████████████████████████████████\n\
-            .     ██████████████████████████████████████████████████████████\n\
-            .    ████████████████████████████████████████████████████████████\n\
-            .    ███████          ██████           ████     ████████    █████\n\
-            .    ███████████████   █████   █████    ███      ██████     █████\n\
-            .    ███████            ████   █████    ███       ████      █████\n\
-            .    ██████   ██████    ████           ████    █   ██   █   █████\n\
-            .    ██████   ██████    ████   ███    █████    ██  █   ██   █████\n\
-            .    ███████         █   ███   █████     ██    ██     ███   █████\n\
-            .    ████████████████████████████████████████████████████████████\n\
-            .    █████   ██████████████  ████████                ████████████\n\
-            .    █████   █████████████  ██████    ██████████████    █████████\n\
-            .    █████   ████████████  █████   ████████████████████   ███████\n\
-            .    █████   ███████████  █████  ████████████████████████  ██████\n\
-            .    █████   ██████████  █████   █████████████████████████  █████\n\
-            .    █████   █████████  ██████  ██████████████████████████  █████\n\
-            .    █████   ████████  ███████  ██████████████████████████  █████\n\
-            .    █████   ███████  █████████  ████████████████████████  ██████\n\
-            .    █████   ██████  ███████████  ██████████████████████  ███████\n\
-            .    █████   █████  █████████████   ██████████████████   ████████\n\
-            .    █████   ████  █████████████████     ████████     ███████████\n\
-            .    █████   ███  ███████████████████████        ████████████████\n\
-            .     ██████████████████████████████████████████████████████████\n\
-            .        ████████████████████████████████████████████████████\n\
-            .\n\
-            .          A R M - W D I O  |  U I  A U T O M A T E D  T E S T S \n\
-        ';
-        console.log(czlogo)        
-    },
+    // onPrepare: function (config, capabilities) {
+    // },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
      * for that worker as well as modify runtime environments in an async fashion.
@@ -260,11 +223,9 @@ exports.config = {
     /**
      * Function to be executed after a test (in Mocha/Jasmine).
      */
-    afterTest: function(test, context, { error, result, duration, passed, retries }) {
-        if (error) {
-            browser.takeScreenshot();
-        }
-    },
+    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
+    // },
+
 
     /**
      * Hook that gets executed after the suite has ended
@@ -306,33 +267,13 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {<Object>} results object containing test results
      */
-    onComplete: function(exitCode, config, capabilities, results) {
-        
-        const reportError = new Error('Could not generate Allure report')
-        const generation = allure(['generate', 'allure-results', '--clean'])
-        return new Promise((resolve, reject) => {
-            const generationTimeout = setTimeout(
-                () => reject(reportError),
-                5000)
-                
-                generation.on('exit', function(exitCode) {
-                    clearTimeout(generationTimeout)
-                    
-                    if (exitCode !== 0) {
-                        return reject(reportError)
-                    }
-                    
-                    console.log('Allure report successfully generated')
-                    resolve()
-                    execSync('allure open allure-report', { encoding: 'utf-8' });
-                })
-            })
-        },
-        /**
-         * Gets executed when a refresh happens.
-         * @param {String} oldSessionId session ID of the old session
-         * @param {String} newSessionId session ID of the new session
-         */
-        //onReload: function(oldSessionId, newSessionId) {
-        //}
-        }
+    // onComplete: function(exitCode, config, capabilities, results) {
+    // },
+    /**
+    * Gets executed when a refresh happens.
+    * @param {String} oldSessionId session ID of the old session
+    * @param {String} newSessionId session ID of the new session
+    */
+    //onReload: function(oldSessionId, newSessionId) {
+    //}
+}
