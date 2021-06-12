@@ -10,7 +10,7 @@ Run the shell script `./install_wdio_from_ground_up.sh` to get installed WebDriv
     sh install_wdio_from_ground_up.sh
 ```
 
-Once you have installed the Node modules, a test example will be created automatically, and you can remove all of these files at `./test/pageobjects` and `./test/specs`, if you want:
+Once you have installed the Node modules, a test example will be created automatically and you can remove all of these files at `./test/pageobjects` and `./test/specs` if you want:
 
 ```
     test
@@ -23,7 +23,7 @@ Once you have installed the Node modules, a test example will be created automat
         |   example.e2e.js
 
 ```
-Those files are already being ignored by `.gitignore`. Just remove those files locally as mentioned before. Any other file would cause failure in the Automation Practice tests if you remove them though.
+Those files are already being ignored by `.gitignore`. Just remove them locally as mentioned before. Any other file would cause failure in the Automation Practice tests if you remove them though.
 
 # Running the Tests
 
