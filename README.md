@@ -4,7 +4,7 @@
 
 # Installing from the Ground up
 
-Run the shell script `./install_wdio_from_ground_up.sh`:
+Run the shell script `./install_wdio_from_ground_up.sh` to get installed WebDriver.IO as well as the dependencies:
 
 ```bash
     sh install_wdio_from_ground_up.sh
@@ -23,18 +23,7 @@ Once you have installed the Node modules, a test example will be created automat
         |   example.e2e.js
 
 ```
-Those files are already bein ignored by `.gitignore`.
-
-# Installing Dependencies
-
-For the Allure Report or any other additional dependency, just run the `install_dependencies.sh`:
-
-```bash
-    sh install_dependencies.sh
-```
-
-
-Attention: Just remove those files mentioned before. Any other file would cause failure in the Automation Practice tests if you remove them though.
+Those files are already being ignored by `.gitignore`. Just remove those files locally as mentioned before. Any other file would cause failure in the Automation Practice tests if you remove them though.
 
 # Running the Tests
 

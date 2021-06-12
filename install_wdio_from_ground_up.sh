@@ -19,5 +19,9 @@ npm i --save-dev @wdio/cli
 npx wdio config -y
 ./node_modules/.bin/wdio config -y
 
+# Install Allure Dependencies
+npm install @wdio/allure-reporter --save-dev --force
+npm install -g allure-commandline --save-dev
+
 # Run the Example
 npx wdio run wdio.conf.js
