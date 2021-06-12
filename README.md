@@ -1,4 +1,4 @@
-<img src="arm_wdio_logo.png" height="150">
+<img src="arm_wdio_logo.png" height="200">
 
 # arm-wdio-web
 
