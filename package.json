@@ -28,5 +28,8 @@
   },
   "dependencies": {
     "allure-commandline": "^2.13.8"
+  },
+  "directories": {
+    "test": "test"
   }
 }
